@@ -303,7 +303,7 @@ namespace BniIconBuilder
             this.Controls.Add(this.customDrawListBox1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = global::BniIconBuilder.Properties.Resources.ironman;
+            this.Icon = BniIconBuilder.Properties.Resources.Ironman;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Form1";

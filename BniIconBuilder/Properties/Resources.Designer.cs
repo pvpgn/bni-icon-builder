@@ -63,9 +63,9 @@ namespace BniIconBuilder.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon ironman {
+        internal static System.Drawing.Icon Ironman {
             get {
-                object obj = ResourceManager.GetObject("ironman", resourceCulture);
+                object obj = ResourceManager.GetObject("Ironman", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
