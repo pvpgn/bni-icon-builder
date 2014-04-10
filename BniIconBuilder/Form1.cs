@@ -259,6 +259,7 @@ namespace BniIconBuilder
         private void menuOpen_Click(object sender, EventArgs e)
         {
             var d = new OpenFileDialog();
+            d.InitialDirectory = Environment.CurrentDirectory;
             d.Filter = "BNI Archive (*.bni)|*.bni";
             if (d.ShowDialog() != DialogResult.OK)
                 return;
@@ -310,6 +311,7 @@ namespace BniIconBuilder
             _saveCurrentIcon();
 
             var d = new SaveFileDialog();
+            d.InitialDirectory = Environment.CurrentDirectory;
             d.Filter = "BNI Archive (*.bni)|*.bni";
             d.CheckPathExists = true;
 
@@ -377,6 +379,7 @@ namespace BniIconBuilder
             if (q == DialogResult.Yes)
             {
                 var d = new SaveFileDialog();
+                d.InitialDirectory = Environment.CurrentDirectory;
                 d.Filter = "Targa image (*.tga)|*.tga";
                 d.CheckPathExists = true;
 
@@ -389,6 +392,7 @@ namespace BniIconBuilder
             else
             {
                 var d = new FolderBrowserDialog();
+                d.SelectedPath= Environment.CurrentDirectory;
                 if (d.ShowDialog() != DialogResult.OK)
                     return;
 
@@ -480,6 +484,7 @@ namespace BniIconBuilder
             Bitmap bitmap;
 
             var d = new OpenFileDialog();
+            d.InitialDirectory = Environment.CurrentDirectory;
             d.Filter = "Image Files (*.BMP;*ICO;*.JPG;*JIF;*JPEG;*JPE;*.MNG;*PCX;*PNG;*TGA;*TIFF;*PSD;*GIF)|*.BMP;*ICO;*.JPG;*JIF;*JPEG;*JPE;*.MNG;*PCX;*PNG;*TGA;*TIFF;*PSD;*GIF";
             d.CheckFileExists = true;
 
