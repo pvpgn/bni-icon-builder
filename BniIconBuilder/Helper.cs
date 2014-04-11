@@ -9,6 +9,8 @@ namespace BniIconBuilder
     static class Helper
     {
         public static string ProgramName = "BNI Icon Builder";
+        public const int MaxWidth = 28;
+        public const int MaxHeight = 14;
 
         
         /// <summary>

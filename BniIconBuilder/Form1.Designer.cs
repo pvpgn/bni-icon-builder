@@ -51,8 +51,9 @@ namespace BniIconBuilder
             this.menuExport = new System.Windows.Forms.ToolStripMenuItem();
             this.menuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.lblWarning = new System.Windows.Forms.Label();
-            this.menuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.customDrawListBox1 = new Toolset.Controls.CustomDrawListBox();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAbout = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -198,7 +199,7 @@ namespace BniIconBuilder
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.menuAbout});
+            this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(360, 24);
@@ -220,35 +221,35 @@ namespace BniIconBuilder
             // menuOpen
             // 
             this.menuOpen.Name = "menuOpen";
-            this.menuOpen.Size = new System.Drawing.Size(142, 22);
+            this.menuOpen.Size = new System.Drawing.Size(152, 22);
             this.menuOpen.Text = "Open...";
             this.menuOpen.Click += new System.EventHandler(this.menuOpen_Click);
             // 
             // menuSave
             // 
             this.menuSave.Name = "menuSave";
-            this.menuSave.Size = new System.Drawing.Size(142, 22);
+            this.menuSave.Size = new System.Drawing.Size(152, 22);
             this.menuSave.Text = "Save";
             this.menuSave.Click += new System.EventHandler(this.menuSave_Click);
             // 
             // menuSaveAs
             // 
             this.menuSaveAs.Name = "menuSaveAs";
-            this.menuSaveAs.Size = new System.Drawing.Size(142, 22);
+            this.menuSaveAs.Size = new System.Drawing.Size(152, 22);
             this.menuSaveAs.Text = "Save As...";
             this.menuSaveAs.Click += new System.EventHandler(this.menuSaveAs_Click);
             // 
             // menuExport
             // 
             this.menuExport.Name = "menuExport";
-            this.menuExport.Size = new System.Drawing.Size(142, 22);
+            this.menuExport.Size = new System.Drawing.Size(152, 22);
             this.menuExport.Text = "Export TGA...";
             this.menuExport.Click += new System.EventHandler(this.menuExport_Click);
             // 
             // menuExit
             // 
             this.menuExit.Name = "menuExit";
-            this.menuExit.Size = new System.Drawing.Size(142, 22);
+            this.menuExit.Size = new System.Drawing.Size(152, 22);
             this.menuExit.Text = "Exit";
             this.menuExit.Click += new System.EventHandler(this.menuExit_Click);
             // 
@@ -260,13 +261,6 @@ namespace BniIconBuilder
             this.lblWarning.Size = new System.Drawing.Size(145, 82);
             this.lblWarning.TabIndex = 16;
             this.lblWarning.Text = "label1";
-            // 
-            // menuAbout
-            // 
-            this.menuAbout.Name = "menuAbout";
-            this.menuAbout.Size = new System.Drawing.Size(61, 20);
-            this.menuAbout.Text = "About...";
-            this.menuAbout.Click += new System.EventHandler(this.menuAbout_Click);
             // 
             // customDrawListBox1
             // 
@@ -283,6 +277,21 @@ namespace BniIconBuilder
             this.customDrawListBox1.DragDrop += new System.Windows.Forms.DragEventHandler(this.customDrawListBox1_DragDrop);
             this.customDrawListBox1.DragOver += new System.Windows.Forms.DragEventHandler(this.customDrawListBox1_DragOver);
             this.customDrawListBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.customDrawListBox1_MouseDown);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuAbout});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(24, 20);
+            this.toolStripMenuItem1.Text = "?";
+            // 
+            // menuAbout
+            // 
+            this.menuAbout.Name = "menuAbout";
+            this.menuAbout.Size = new System.Drawing.Size(152, 22);
+            this.menuAbout.Text = "About...";
+            this.menuAbout.Click += new System.EventHandler(this.menuAbout_Click);
             // 
             // Form1
             // 
@@ -303,7 +312,7 @@ namespace BniIconBuilder
             this.Controls.Add(this.customDrawListBox1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = BniIconBuilder.Properties.Resources.Ironman;
+            this.Icon = global::BniIconBuilder.Properties.Resources.Ironman;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -344,6 +353,7 @@ namespace BniIconBuilder
         private System.Windows.Forms.ToolStripMenuItem menuExport;
         private System.Windows.Forms.ToolStripMenuItem menuExit;
         private System.Windows.Forms.Label lblWarning;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem menuAbout;
 
     }

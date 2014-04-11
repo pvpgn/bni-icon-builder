@@ -174,6 +174,9 @@ namespace BniIconBuilder
                 txtFlag.Visible = true;
                 txtTag.Visible = false;
                 _validateValues();
+
+                txtFlag.Focus();
+                txtFlag.SelectionStart = txtFlag.Text.Length;
             }
         }
 
@@ -185,6 +188,9 @@ namespace BniIconBuilder
                 txtFlag.Visible = false;
                 txtTag.Visible = true;
                 _validateValues();
+
+                txtTag.Focus();
+                txtTag.SelectionStart = txtTag.Text.Length;
             }
         }
 
@@ -281,13 +287,13 @@ namespace BniIconBuilder
                 var images = tga.SplitImage(bn.Data, 14);
 
                 if (bn.Icons.Length != images.Length)
-                    throw new Exception(String.Format("Icons count ({0}) is not equals with images count ({1})", bn.Icons.Length, images.Length));
+                    MessageBox.Show(String.Format("Icons count ({0}) is not equals with images count ({1})", bn.Icons.Length, images.Length));
                 if (bn.Icons.Length == 0)
                     throw new Exception(String.Format("No icons found"));
 
 
                 // put each image corresponding to it icon in bni structure
-                for (int i = 0; i < images.Length; i++)
+                for (int i = 0; i < bn.Icons.Length; i++)
                 {
                     bn.Icons[i].Image = images[i];
                     customDrawListBox1.Items.Add(bn.Icons[i]);
@@ -505,7 +511,8 @@ namespace BniIconBuilder
                 return null;
             }
 
-            return bitmap;
+            // restrict image size to fixed width and height
+            return new Bitmap(bitmap, Helper.MaxWidth, Helper.MaxHeight);
         }
 
 

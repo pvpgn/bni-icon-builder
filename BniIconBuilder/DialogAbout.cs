@@ -21,7 +21,9 @@ namespace BniIconBuilder
         private void About_Load(object sender, EventArgs e)
         {
             // assembly version   
-            string assemblyVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            var v = Assembly.GetExecutingAssembly().GetName().Version;
+
+            string assemblyVersion = string.Format("{0}.{1}.{2}", v.Major, v.Minor, v.Build);
             txtInfo.Text = string.Format("{0} Version: {1}\r\n\r\n{2}", Helper.ProgramName, assemblyVersion, txtInfo.Text);
 
             this.Text = "About " + Helper.ProgramName;
