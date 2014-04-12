@@ -34,6 +34,9 @@ namespace BniIconBuilder
 
         public void Save(IconItem[] icons, byte[] data, string outFileName)
         {
+            // sort items by flag
+            sortIcons(ref icons);
+
             var bni = new BniFormat()
             {
                 HeaderLength = 0x10,
@@ -133,17 +136,19 @@ namespace BniIconBuilder
             return new string(charArray);
         }
 
-        private byte[] getBytes(Object bni)
+        /// <summary>
+        /// Sort items by flag; icons with tags always at the end of the array
+        /// </summary>
+        /// <param name="icons"></param>
+        private void sortIcons(ref IconItem[] icons)
         {
-            int size = Marshal.SizeOf(bni);
-            byte[] arr = new byte[size];
-            IntPtr ptr = Marshal.AllocHGlobal(size);
+            var iconList = icons.ToList();
+            // select flags and order by flag
+            var sortedIcons = icons.ToList().Where(x => string.IsNullOrEmpty(x.Tag)).OrderBy(x => x.Flag)
+                // select tags and merge with flags (flags first)
+                .Concat(iconList.Where(x => !string.IsNullOrEmpty(x.Tag)));
 
-            Marshal.StructureToPtr(bni, ptr, true);
-            Marshal.Copy(ptr, arr, 0, size);
-            Marshal.FreeHGlobal(ptr);
-
-            return arr;
+            icons = sortedIcons.ToArray();
         }
 
     }

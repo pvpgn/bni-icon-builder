@@ -260,6 +260,7 @@ namespace BniIconBuilder
             customDrawListBox1.Items.Insert(index, data);
 
             customDrawListBox1.SelectedIndex = index;
+            HasModified = true;
         }
 
         private void menuOpen_Click(object sender, EventArgs e)
@@ -287,7 +288,7 @@ namespace BniIconBuilder
                 var images = tga.SplitImage(bn.Data, 14);
 
                 if (bn.Icons.Length != images.Length)
-                    MessageBox.Show(String.Format("Icons count ({0}) is not equals with images count ({1})", bn.Icons.Length, images.Length));
+                    MessageBox.Show(String.Format("Icons count ({0}) is not equals with images count ({1})", bn.Icons.Length, images.Length), "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 if (bn.Icons.Length == 0)
                     throw new Exception(String.Format("No icons found"));
 
@@ -306,7 +307,7 @@ namespace BniIconBuilder
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 FileName = null;
             }
 
@@ -341,11 +342,11 @@ namespace BniIconBuilder
                 bni.Save(icons, data, fileName);
 
                 HasModified = false;
-                MessageBox.Show(string.Format("File saved to {0}", fileName));
+                MessageBox.Show(string.Format("File saved to {0}", fileName), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } 
         }
 
@@ -415,7 +416,7 @@ namespace BniIconBuilder
                 if (fileName != null)
                 {
                     tga.ExportTga(images, fileName);
-                    MessageBox.Show(string.Format("Image saved to {0}", fileName));
+                    MessageBox.Show(string.Format("Image saved to {0}", fileName), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -431,7 +432,7 @@ namespace BniIconBuilder
                     }
                         
                     tga.ExportTgaMany(images, files);
-                    MessageBox.Show(string.Format("Images saved to {0}", path));
+                    MessageBox.Show(string.Format("Images saved to {0}", path), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
